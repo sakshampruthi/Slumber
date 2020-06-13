@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "374953862360",
+    "firebase_url": "https://sleep-doctor-b0dcd.firebaseio.com",
+    "project_id": "sleep-doctor-b0dcd",
+    "storage_bucket": "sleep-doctor-b0dcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374953862360:android:efcf468475ad75e6d363ad",
+        "android_client_info": {
+          "package_name": "com.thesleepconsultingcompany.sleepdoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374953862360-uk8arjla0epav565vd5s9ukmkaosdpr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQLqDoFRKKPg8DnGTl9eUUWAdWu777m_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374953862360-uk8arjla0epav565vd5s9ukmkaosdpr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

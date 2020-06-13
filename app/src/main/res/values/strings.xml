@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sleep Doctor</string>
+    <string name="welcome">Welcome</string>
+    <string name="forgotpass">Forgot Password?</string>
+    <string name="log_in">Login</string>
+    <string name="not_a_user_sign_up">Sign Up</string>
+</resources>
