@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "374953862360",
-    "firebase_url": "https://sleep-doctor-b0dcd.firebaseio.com",
-    "project_id": "sleep-doctor-b0dcd",
-    "storage_bucket": "sleep-doctor-b0dcd.appspot.com"
+    "project_number": "1097091269839",
+    "firebase_url": "https://slumber-19bb0.firebaseio.com",
+    "project_id": "slumber-19bb0",
+    "storage_bucket": "slumber-19bb0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:374953862360:android:efcf468475ad75e6d363ad",
+        "mobilesdk_app_id": "1:1097091269839:android:faf4da1badc14fdc45a3ba",
         "android_client_info": {
-          "package_name": "com.thesleepconsultingcompany.sleepdoctor"
+          "package_name": "com.thesleepconsultingcompany.slumber"
         }
       },
       "oauth_client": [
         {
-          "client_id": "374953862360-uk8arjla0epav565vd5s9ukmkaosdpr6.apps.googleusercontent.com",
+          "client_id": "1097091269839-vcb6hr7eokf7r0v2c7gkvmo2vmsqbjda.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesleepconsultingcompany.slumber",
+            "certificate_hash": "922a4222d1790cd2aae5e3685fae6cecc43d9e7b"
+          }
+        },
+        {
+          "client_id": "1097091269839-p4n5vsfhcjclmjq1kmjv654j5tvgrtcg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDQLqDoFRKKPg8DnGTl9eUUWAdWu777m_c"
+          "current_key": "AIzaSyCm_acV663zyP3bTA0e4ILSTU9jH4tAlEY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "374953862360-uk8arjla0epav565vd5s9ukmkaosdpr6.apps.googleusercontent.com",
+              "client_id": "1097091269839-p4n5vsfhcjclmjq1kmjv654j5tvgrtcg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

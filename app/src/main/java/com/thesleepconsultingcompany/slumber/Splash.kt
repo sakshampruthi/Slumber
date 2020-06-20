@@ -1,4 +1,4 @@
-package com.thesleepconsultingcompany.sleepdoctor
+package com.thesleepconsultingcompany.slumber
 
 import android.content.Intent
 import android.os.Build
@@ -17,6 +17,6 @@ class Splash : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this, Login::class.java))
             finish()
-        },0,500)
+        },0,1000)
     }
 }

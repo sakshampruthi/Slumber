@@ -1,7 +1,31 @@
 <resources>
-    <string name="app_name">Sleep Doctor</string>
+    <string name="app_name">Slumber</string>
     <string name="welcome">Welcome</string>
     <string name="forgotpass">Forgot Password?</string>
     <string name="log_in">Login</string>
     <string name="not_a_user_sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <!--    Password Strength-->
+    <string name="password_strength_weak">Weak</string>
+    <string name="password_strength_medium">Medium</string>
+    <string name="password_strength_strong">Strong</string>
+    <string name="password_strength_very_strong">Very Strong</string>
+
+    <string-array name="Sex">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Transgender</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="times">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>

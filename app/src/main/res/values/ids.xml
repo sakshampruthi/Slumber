@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fab_morning" type="id" />
+    <item name="fab_night" type="id" />
+    <item name="fab_evening" type="id" />
+</resources>

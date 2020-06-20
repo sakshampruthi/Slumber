@@ -1,4 +1,4 @@
-package com.thesleepconsultingcompany.sleepdoctor
+package com.thesleepconsultingcompany.slumber
 
 import org.junit.Test
 

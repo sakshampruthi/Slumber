@@ -4,30 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/torq"
-    tools:context="com.thesleepconsultingcompany.slumber.SignUp">
+    tools:context="com.thesleepconsultingcompany.slumber.DetailsActivity"
+    android:background="@color/torq">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textname"
-        android:layout_width="wrap_content"
+        android:id="@+id/textAge"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         style="@style/MyEditTextTheme"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         app:hintTextColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline5">
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Age"
+            android:inputType="number"
             android:background="@android:color/transparent"
-            android:ems="15"
-            android:hint="Full Name"
-            android:inputType="textPersonName"
             android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/sexSpinner"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:entries="@array/Sex"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/sexSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/sexSpinner"
+        app:layout_constraintTop_toTopOf="@+id/sexSpinner" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sex:"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/sexSpinner"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -37,28 +68,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.48" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
-        app:hintTextColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline7">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:ems="15"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -93,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.6005472" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
@@ -102,65 +111,49 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.87" />
 
-
-    <android.widget.Button
-        android:id="@+id/signupbutton"
-        android:layout_width="200dp"
-        android:layout_height="48dp"
-        android:background="@drawable/button_design2"
-        android:text="Next"
-        android:textColor="@color/torq"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textpass"
-        app:layout_constraintVertical_bias="0.666" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textpass"
+    <ProgressBar
+        android:id="@+id/StepTwoProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
-        app:hintTextColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@id/guideline6"
-        app:passwordToggleEnabled="true">
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:layout_constraintVertical_bias="0.16000003" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:ems="15"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:textColor="@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <android.widget.Button
+        android:id="@+id/stepTwoButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_design2"
+        android:text="Sign Up"
+        android:textColor="@color/torq"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/ubuntu_regular"
-        android:gravity="center"
-        android:text="Sign Up"
+        android:text="Details"
+
         android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline10" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
