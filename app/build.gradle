@@ -59,6 +59,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics:17.1.0'
     //fab menu
     implementation 'com.leinardi.android:speed-dial:3.1.1'
-    //fluid slider
-    implementation 'com.ramotion.fluidslider:fluid-slider:0.3.1'
+    //Indicator SeekBar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 }

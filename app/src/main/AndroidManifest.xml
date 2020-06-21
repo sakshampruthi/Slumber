@@ -9,20 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.thesleepconsultingcompany.slumber.ui.sleep.WakeupActivity"></activity>
-        <activity android:name="com.thesleepconsultingcompany.slumber.ui.HeadacheActivity" />
-        <activity android:name="com.thesleepconsultingcompany.slumber.ui.SleepActivity" />
-        <activity android:name="com.thesleepconsultingcompany.slumber.DetailsActivity" />
-        <activity android:name="com.thesleepconsultingcompany.slumber.MainActivity" />
-        <activity android:name="com.thesleepconsultingcompany.slumber.SignUp" />
-        <activity android:name="com.thesleepconsultingcompany.slumber.Splash">
+        <activity android:name=".ui.sleep.BeforeSleepActivity"></activity>
+        <activity android:name=".ui.sleep.WakeupActivity" />
+        <activity android:name=".ui.HeadacheActivity" />
+        <activity android:name=".ui.SleepActivity" />
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.thesleepconsultingcompany.slumber.Login" />
+        <activity android:name=".Login" />
     </application>
 
 </manifest>
