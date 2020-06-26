@@ -9,6 +9,8 @@ import androidx.core.content.res.ResourcesCompat
 import com.leinardi.android.speeddial.SpeedDialActionItem
 import com.leinardi.android.speeddial.SpeedDialView
 import com.thesleepconsultingcompany.slumber.R
+import com.thesleepconsultingcompany.slumber.ui.sleep.BeforeSleepActivity
+import com.thesleepconsultingcompany.slumber.ui.sleep.NapActivity
 import com.thesleepconsultingcompany.slumber.ui.sleep.WakeupActivity
 
 class SleepActivity : AppCompatActivity() {
@@ -48,6 +50,18 @@ class SleepActivity : AppCompatActivity() {
                         WakeupActivity::class.java))
                     speedDialView.close() // To close the Speed Dial with animation
                     return@OnActionSelectedListener true // false will close it without animation
+                }
+                R.id.fab_night -> {
+                    startActivity(Intent(this,
+                        BeforeSleepActivity::class.java))
+                    speedDialView.close()
+                    return@OnActionSelectedListener true
+                }
+                R.id.fab_evening -> {
+                    startActivity(Intent(this,
+                        NapActivity::class.java))
+                    speedDialView.close()
+                    return@OnActionSelectedListener true
                 }
             }
             false

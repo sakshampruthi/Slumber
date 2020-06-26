@@ -10,6 +10,7 @@ class SharedPreference {
         const val BEFORESLEEP = "beforesleep"
         const val BEFOREBED = "beforebed"
         const val WAKEUPREASON = "wakeupreason"
+        const val EXERCISE = "exercise"
 
         fun getSharedPrefernces(ctx:Context?): SharedPreferences? {
             return PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -47,5 +48,15 @@ class SharedPreference {
         }
         fun getWakeupReason(ctx: Context): Set<String>?  = getSharedPrefernces(ctx)?.getStringSet(WAKEUPREASON,
             setOf("Didn't WakeUp","Bad Dream","Body Pain","Tension","Snoring","Noise","Hunger","Add Reason..."))
+
+        fun setExcercise(ctx: Context, excercise:Set<String>){
+            val editor = getSharedPrefernces(ctx)?.edit()
+            editor?.putStringSet(EXERCISE,excercise)
+            editor?.apply()
+        }
+        fun getExercise(ctx: Context):Set<String>? = getSharedPrefernces(ctx)?.getStringSet(EXERCISE,
+        setOf("Running","Yoga","Walking","Cricket","Football","Add Exercise..."))
+
+
     }
 }

@@ -26,47 +26,23 @@ public class RecordsWakeUp {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getactBeforeSleep() {
+    public String getActBeforeSleep() {
         return actBeforeSleep;
     }
 
-    public void setactBeforeSleep(String actBeforeSleep) {
-        this.actBeforeSleep = actBeforeSleep;
-    }
-
-    public String getactBeforeBed() {
+    public String getActBeforeBed() {
         return actBeforeBed;
-    }
-
-    public void setactBeforeBed(String actBeforeBed) {
-        this.actBeforeBed = actBeforeBed;
     }
 
     public String getTimes() {
         return times;
     }
 
-    public void setTimes(String times) {
-        this.times = times;
-    }
-
     public String getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     public String getReason() {
         return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
     }
 }
