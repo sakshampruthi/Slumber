@@ -1,5 +1,6 @@
 package com.thesleepconsultingcompany.slumber.ui
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
@@ -12,8 +13,11 @@ import com.thesleepconsultingcompany.slumber.R
 import com.thesleepconsultingcompany.slumber.ui.sleep.BeforeSleepActivity
 import com.thesleepconsultingcompany.slumber.ui.sleep.NapActivity
 import com.thesleepconsultingcompany.slumber.ui.sleep.WakeupActivity
+import kotlinx.android.synthetic.main.activity_sleep.*
+import java.util.*
 
 class SleepActivity : AppCompatActivity() {
+    lateinit var date:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,32 @@ class SleepActivity : AppCompatActivity() {
         actionBar!!.setDisplayHomeAsUpEnabled(true)
         val tv = findViewById<TextView>(R.id.tvtitle)
         tv.text = "Sleep Diary"
+
+        val myCalendar = Calendar.getInstance()
+        val year = myCalendar[Calendar.YEAR]
+        var month = myCalendar[Calendar.MONTH]
+        val day = myCalendar[Calendar.DAY_OF_MONTH]
+        month += 1
+        var mon = if (month < 10) "0$month" else month.toString()
+        val d = if(day < 10) "0$day" else day.toString()
+        dateMain.text = "$d-$mon-$year"
+        month-=1
+        dateMain.setOnClickListener {
+            val datePickerDialog =
+                DatePickerDialog(this,
+                    DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                        var month = month
+                        month = month + 1
+                        val day: String
+                        var mon = if (month < 10) "0$month" else month.toString()
+                        day = if (dayOfMonth < 10) "0$dayOfMonth" else dayOfMonth.toString()
+                        date = "$day-$mon-$year"
+                        dateMain.text = date
+                    }, year, month, day
+                )
+            datePickerDialog.show()
+
+        }
 
         val speedDialView = findViewById<SpeedDialView>(R.id.speedDial)
         speedDialView.addActionItem(

@@ -26,7 +26,64 @@
         app:sdOverlayLayout="@id/overlay"
         app:sdMainFabOpenedSrc="@drawable/ic_close_white_24dp"
         app:sdMainFabClosedSrc="@drawable/ic_add_white_24dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolsleep">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/dateMain"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawablePadding="5dp"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sleep_entry"
+                android:layout_centerHorizontal="true"
+                android:textSize="18sp"
+                android:layout_below="@id/dateMain"
+                android:id="@+id/sleepEntry"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sleepEntry"
+                android:id="@+id/recycleSleep"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Wake Up Entry"
+                android:layout_below="@id/recycleSleep"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/wakeEntry"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wakeEntry"
+                android:id="@+id/recycleWake"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Naps"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:layout_below="@id/recycleWake"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/napEntry"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleNap"
+                android:layout_below="@id/napEntry"/>
 
-
-
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
