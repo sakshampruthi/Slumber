@@ -35,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nap Details"
+                android:layout_marginStart="20dp"
                 android:layout_below="@id/dateSetEven"
                 android:layout_marginTop="20dp"
                 android:textSize="18sp"
@@ -42,9 +43,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
                 android:baselineAligned="false"
                 android:id="@+id/ans1Even"
                 android:layout_below="@id/napText">
@@ -53,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:text="When did you go to your bed to sleep"
                     android:textSize="18sp"
-                    android:ems="12"
+                    android:ems="11"
                     android:textColor="@color/textcolor"/>
 
                 <TextView
@@ -81,10 +82,9 @@
             <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
-
+            android:layout_marginStart="10dp"
             android:id="@+id/ans2Even"
             android:layout_below="@id/ans1Even">
             <TextView
@@ -92,51 +92,51 @@
                 android:layout_height="wrap_content"
                 android:text="Approx what time you slept"
                 android:textSize="18sp"
-                android:ems="12"
+                android:ems="11"
                 android:textColor="@color/textcolor"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="7dp"
-                android:text=":"
-                android:textColor="@color/textcolor"
-                android:textSize="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="7dp"
+                    android:text=":"
+                    android:textColor="@color/textcolor"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/ans2EvenTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableEnd="@drawable/ic_stopwatch"
-                android:drawablePadding="5dp"
-                android:focusable="true"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="00:00"
-                android:textColor="@color/textcolor"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/ans2EvenTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_stopwatch"
+                    android:drawablePadding="5dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="00:00"
+                    android:textColor="@color/textcolor"
+                    android:textSize="20sp" />
         </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/ans3Even"
                 android:layout_below="@id/ans2Even">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="12"
+                    android:ems="11"
                     android:text="What approx time you got up"
                     android:textColor="@color/textcolor"
                     android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:padding="7dp"
                     android:text=":"
                     android:textColor="@color/textcolor"

@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="13"
+                    android:ems="11"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="How much coffee/chai taken today"
                     android:textColor="@color/textcolor"
@@ -137,7 +137,7 @@
                     android:id="@+id/ques3beforetext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="12"
+                    android:ems="11"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="When was the last cup of coffee/tea you took"
                     android:textColor="@color/textcolor"

@@ -40,7 +40,7 @@ class SleepActivity : AppCompatActivity() {
         speedDialView.addActionItem(
             SpeedDialActionItem.Builder(R.id.fab_evening, R.drawable.ic_edit_white_24dp)
                 .setFabBackgroundColor(ResourcesCompat.getColor(resources, R.color.torq, theme))
-                .setLabel("Evening Entry")
+                .setLabel("Nap Entry")
                 .create())
 
         speedDialView.setOnActionSelectedListener(SpeedDialView.OnActionSelectedListener { actionItem ->

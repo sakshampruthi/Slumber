@@ -12,16 +12,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.thesleepconsultingcompany.slumber.R
 import com.thesleepconsultingcompany.slumber.models.RecordsNap
 import kotlinx.android.synthetic.main.activity_evening.*
-import kotlinx.android.synthetic.main.activity_wakeup.*
 import java.util.*
 
 class NapActivity : AppCompatActivity() {
 
     lateinit var mDatabaseReference:DatabaseReference
     lateinit var date:String
-    var bedTime:String? = "00:00"
-    var sleepTime:String? = "00:00"
-    var WakeUpTime:String? = "00:00"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,24 +58,55 @@ class NapActivity : AppCompatActivity() {
         }
 
 
-        ans1EvenTime.setOnClickListener { bedTime = showCustomTimePicker() }
-        ans2EvenTime.setOnClickListener { sleepTime = showCustomTimePicker() }
-        ans3EvenTime.setOnClickListener { WakeUpTime = showCustomTimePicker() }
+        ans1EvenTime.setOnClickListener {
+            val timePickerDialog = TimePickerDialog(this ,
+                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val hour = if (hourOfDay < 10)
+                        "0$hourOfDay"
+                    else
+                        hourOfDay.toString()
+                    val min = if (minute<10)
+                        "0$minute"
+                    else
+                        minute.toString()
+                    ans1EvenTime.text = "$hour:$min"
+                },0,0,false)
+            timePickerDialog.show()
+            }
+        ans2EvenTime.setOnClickListener {
+            val timePickerDialog = TimePickerDialog(this ,
+                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val hour = if (hourOfDay < 10)
+                        "0$hourOfDay"
+                    else
+                        hourOfDay.toString()
+                    val min = if (minute<10)
+                        "0$minute"
+                    else
+                        minute.toString()
+                    ans2EvenTime.text = "$hour:$min"
+                },0,0,false)
+            timePickerDialog.show()
+        }
+        ans3EvenTime.setOnClickListener { val timePickerDialog = TimePickerDialog(this ,
+            TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                val hour = if (hourOfDay < 10)
+                    "0$hourOfDay"
+                else
+                    hourOfDay.toString()
+                val min = if (minute<10)
+                    "0$minute"
+                else
+                    minute.toString()
+                ans3EvenTime.text = "$hour:$min"
+            },0,0,false)
+            timePickerDialog.show() }
         submitNap.setOnClickListener { submit() }
 
     }
     private fun submit(){
-        val records = RecordsNap(dateSetEven.text.toString(), bedTime, sleepTime, WakeUpTime)
-        mDatabaseReference.child(dateset.text.toString()).child("Nap").setValue(records)
+        val records = RecordsNap(dateSetEven.text.toString(), ans1EvenTime.text.toString(), ans2EvenTime.text.toString(), ans3EvenTime.text.toString())
+        mDatabaseReference.child(dateSetEven.text.toString()).child("Nap").setValue(records)
         finish()
-    }
-    private fun showCustomTimePicker(): String? {
-        var time: String? =null
-        val timePickerDialog = TimePickerDialog(this ,
-            TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                time = "" + hourOfDay + ":" + minute
-            },0,0,true)
-        timePickerDialog.show()
-        return time
     }
 }

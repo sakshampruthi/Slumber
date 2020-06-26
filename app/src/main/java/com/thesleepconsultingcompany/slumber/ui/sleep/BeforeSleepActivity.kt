@@ -17,7 +17,6 @@ import com.thesleepconsultingcompany.slumber.R
 import com.thesleepconsultingcompany.slumber.models.RecordsBeforeSleep
 import com.thesleepconsultingcompany.slumber.models.SharedPreference
 import kotlinx.android.synthetic.main.activity_before_sleep.*
-import kotlinx.android.synthetic.main.activity_wakeup.*
 import java.util.*
 
 class BeforeSleepActivity : AppCompatActivity() {
@@ -35,6 +34,7 @@ class BeforeSleepActivity : AppCompatActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.toolbarcom)
         setSupportActionBar(toolbar)
+        setSleepSpinner()
         val actionBar = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true)
         val tv = findViewById<TextView>(R.id.tvtitle)
@@ -97,10 +97,35 @@ class BeforeSleepActivity : AppCompatActivity() {
             measure.text = m.toString()
         }
         ans3beforetext.setOnClickListener {
-            time = showCustomTimePicker()
+            val timePickerDialog = TimePickerDialog(context ,
+                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val hour = if (hourOfDay < 10)
+                        "0$hourOfDay"
+                    else
+                        hourOfDay.toString()
+                    val min = if (minute<10)
+                        "0$minute"
+                    else
+                        minute.toString()
+                    ans3beforetext.text = "$hour:$min"
+                },0,0,false)
+            timePickerDialog.show()
+
         }
         ans4beforeTime.setOnClickListener {
-            time2 = showCustomTimePicker()
+            val timePickerDialog = TimePickerDialog(context ,
+                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                    val hour = if (hourOfDay < 10)
+                        "0$hourOfDay"
+                    else
+                        hourOfDay.toString()
+                    val min = if (minute<10)
+                        "0$minute"
+                    else
+                        minute.toString()
+                    ans4beforeTime.text = "$hour:$min"
+                },0,0,true)
+            timePickerDialog.show()
         }
         ans4beforeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -197,7 +222,7 @@ class BeforeSleepActivity : AppCompatActivity() {
     }
     private  fun submit(){
         val records = RecordsBeforeSleep(datesetbefore.text.toString(), mood, measure.text.toString(), ans3beforetext.text.toString(), ans4beforeSpinner.selectedItem.toString(), ans4beforeTime.text.toString(), ans5before.selectedItem.toString())
-        mDatabaseReference.child(dateset.text.toString()).child("Before Going to Sleep").setValue(records)
+        mDatabaseReference.child(datesetbefore.text.toString()).child("Before Going to Sleep").setValue(records)
         finish()
     }
     private fun setSleepSpinner(){
@@ -206,7 +231,7 @@ class BeforeSleepActivity : AppCompatActivity() {
         listSleep.addAll(list)
         val adapterSleep = ArrayAdapter(this,android.R.layout.simple_spinner_item,listSleep)
         adapterSleep.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        ans1.adapter = adapterSleep
+        ans5before.adapter = adapterSleep
 
     }
     private fun setExerciseSpinner(){
@@ -217,13 +242,5 @@ class BeforeSleepActivity : AppCompatActivity() {
         adapterExercise.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         ans4beforeSpinner.adapter = adapterExercise
     }
-    private fun showCustomTimePicker(): String? {
-        var time: String? =null
-        val timePickerDialog = TimePickerDialog(context ,
-            TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                time = "" + hourOfDay + ":" + minute
-            },0,0,true)
-        timePickerDialog.show()
-        return time
-    }
+
 }
