@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:backgroundTint="@color/white"
         android:layout_height="wrap_content"
+        app:tint="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         app:sdMainFabAnimationRotateAngle="90"
@@ -26,64 +27,343 @@
         app:sdOverlayLayout="@id/overlay"
         app:sdMainFabOpenedSrc="@drawable/ic_close_white_24dp"
         app:sdMainFabClosedSrc="@drawable/ic_add_white_24dp"/>
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolsleep">
-        <RelativeLayout
-            android:layout_width="match_parent"
+        android:layout_below="@id/toolsleep"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/dateMain"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_centerHorizontal="true"
+            android:drawableEnd="@drawable/ic_calendar"
+            android:drawablePadding="5dp"
+            android:text="xx-xx-xxxx"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#787878"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateMain" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Sleep Hours:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+
+        <TextView
+            android:id="@+id/sleepEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sleep_entry"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sleepEntry">
+
+            <TextView
+                android:id="@+id/q1sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity Before going to bed:" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/dateMain"
-                android:drawableEnd="@drawable/ic_calendar"
-                android:drawablePadding="5dp"
-                android:textSize="20sp"/>
+                android:layout_toEndOf="@id/q1sleep"
+                android:paddingStart="10dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/q2sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q1sleep"
+                android:text="Activity before going to sleep:" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sleep_entry"
-                android:layout_centerHorizontal="true"
-                android:textSize="18sp"
-                android:layout_below="@id/dateMain"
-                android:id="@+id/sleepEntry"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/sleepEntry"
-                android:id="@+id/recycleSleep"/>
+                android:layout_below="@id/q1sleep"
+                android:layout_toEndOf="@id/q2sleep"
+                android:paddingStart="10dp"
+                android:text="" />
+
             <TextView
+                android:id="@+id/q3sleep"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Wake Up Entry"
-                android:layout_below="@id/recycleSleep"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/wakeEntry"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/wakeEntry"
-                android:id="@+id/recycleWake"/>
+                android:layout_below="@id/q2sleep"
+                android:text="How many times you woke up:" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Naps"
-                android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:layout_below="@id/recycleWake"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/napEntry"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
+                android:layout_below="@id/q2sleep"
+                android:layout_toEndOf="@id/q3sleep"
+                android:paddingStart="10dp"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/q4sleep"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/recycleNap"
-                android:layout_below="@id/napEntry"/>
+                android:layout_below="@id/q3sleep"
+                android:text="Duration of Wake:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3sleep"
+                android:layout_toEndOf="@id/q4sleep"
+                android:paddingStart="10dp"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/q5sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q4sleep"
+                android:text="Reason for Waking up:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q4sleep"
+                android:layout_toEndOf="@id/q5sleep"
+                android:paddingStart="10dp" />
 
         </RelativeLayout>
-    </ScrollView>
+
+        <TextView
+            android:id="@+id/wakeEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="After Waking Up"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        <RelativeLayout
+            android:id="@+id/relativeLayoutwake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wakeEntry">
+
+            <TextView
+                android:id="@+id/q1wake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity 2-3hrs Before going to bed:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/q1wake"
+                android:paddingStart="10dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/q2wake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q1wake"
+                android:text="Total number of beverages:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q1wake"
+                android:layout_toEndOf="@id/q2wake"
+                android:paddingStart="10dp"
+                android:text="2" />
+
+            <TextView
+                android:id="@+id/q3wake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2wake"
+                android:text="Last Beverage time:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2wake"
+                android:layout_toEndOf="@id/q3wake"
+                android:paddingStart="10dp"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/q4wake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3wake"
+                android:text="Excercise you did today:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3wake"
+                android:layout_toEndOf="@id/q4wake"
+                android:paddingStart="10dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/q5wake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q4wake"
+                android:text="Exercise Duration:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q4wake"
+                android:text="00:00"
+                android:layout_toEndOf="@id/q5wake"
+                android:paddingStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/q6wake"
+                android:layout_below="@id/q5wake"
+                android:text="Mood after Waking up in Morning:"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_below="@id/q5wake"
+                android:layout_toEndOf="@id/q6wake"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/napEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Naps"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutnap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/napEntry">
+
+            <TextView
+                android:id="@+id/q1nap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time you went to Bed:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/q1nap"
+                android:paddingStart="10dp"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/q2nap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q1nap"
+                android:text="Time you wnet to sleep:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q1nap"
+                android:layout_toEndOf="@id/q2nap"
+                android:paddingStart="10dp"
+                android:text="00:00" />
+
+            <TextView
+                android:id="@+id/q3nap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2nap"
+                android:text="Time you woke up:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q2nap"
+                android:layout_toEndOf="@id/q3nap"
+                android:paddingStart="10dp"
+                android:text="00:00" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#787878"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:backgroundTint="#787878"
+            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayoutwake" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </RelativeLayout>

@@ -12,6 +12,7 @@ import com.leinardi.android.speeddial.SpeedDialView
 import com.thesleepconsultingcompany.slumber.R
 import com.thesleepconsultingcompany.slumber.ui.sleep.BeforeSleepActivity
 import com.thesleepconsultingcompany.slumber.ui.sleep.NapActivity
+import com.thesleepconsultingcompany.slumber.ui.sleep.TotalHoursActivity
 import com.thesleepconsultingcompany.slumber.ui.sleep.WakeupActivity
 import kotlinx.android.synthetic.main.activity_sleep.*
 import java.util.*
@@ -72,6 +73,12 @@ class SleepActivity : AppCompatActivity() {
                 .setFabBackgroundColor(ResourcesCompat.getColor(resources, R.color.torq, theme))
                 .setLabel("Nap Entry")
                 .create())
+        speedDialView.addActionItem(
+            SpeedDialActionItem.Builder(R.id.fab_totalHours, R.drawable.ic_edit_white_24dp)
+                .setFabBackgroundColor(ResourcesCompat.getColor(resources, R.color.torq,theme))
+                .setLabel("Total Sleep Hours")
+                .create()
+        )
 
         speedDialView.setOnActionSelectedListener(SpeedDialView.OnActionSelectedListener { actionItem ->
             when (actionItem.id) {
@@ -90,6 +97,14 @@ class SleepActivity : AppCompatActivity() {
                 R.id.fab_evening -> {
                     startActivity(Intent(this,
                         NapActivity::class.java))
+                    speedDialView.close()
+                    return@OnActionSelectedListener true
+                }
+                R.id.fab_totalHours -> {
+                    startActivity(
+                        Intent(this,
+                        TotalHoursActivity::class.java)
+                    )
                     speedDialView.close()
                     return@OnActionSelectedListener true
                 }

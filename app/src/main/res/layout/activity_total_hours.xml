@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.sleep.TotalHoursActivity">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateHours"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="xx-xx-xxxx"
+        android:layout_centerHorizontal="true"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:drawablePadding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/textcolor"
+        android:textStyle="bold"/>
+
+    <com.sdsmdg.harjot.crollerTest.Croller
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/dateHours"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/croller"
+        app:back_circle_color="#EDEDED"
+        app:indicator_color="#0B3C49"
+        app:indicator_width="20"
+        app:min="0"
+        app:progress_primary_circle_size="25"
+        app:progress_secondary_circle_size="15"
+        app:label="Select Sleep Hours"
+        app:label_size="50"
+        app:is_continuous="false"
+        app:label_color="#000000"
+        app:main_circle_color="#FFFFFF"
+        app:max="24"
+        app:progress_primary_color="#0B3C49"
+        app:progress_secondary_color="#EEEEEE"
+        app:start_offset="10"/>
+
+</RelativeLayout>
